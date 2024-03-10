@@ -1,0 +1,35 @@
+.input {
+    $borderSize: toRem(10);
+    $linearWidth: toRem(3);
+
+    box-sizing: border-box;
+    padding: toRem(3);
+    border-radius: $borderSize;
+    background: linear-gradient(45deg, rgb(121, 124, 124), rgb(23, 157, 165));
+
+    outline: none;
+    border: none;
+
+    &__value {
+        @include fontSize(p2);
+        color: $surface;
+        background-color: $dark;
+        border-radius: $borderSize;
+        height: toRem(50) - $linearWidth;
+        display: block;
+        width: 100%;
+        padding-left: toRem(14);
+        box-sizing: border-box;
+
+        &::placeholder {
+           opacity: 0.7;
+        }
+    }
+
+    @include media-desktop() {
+        &__value {
+            height: toRem(60) - $linearWidth;
+            padding-left: toRem(18);
+        }
+    }
+}

@@ -1,6 +1,5 @@
-$fontFamily: 'Onest';
+$fontFamily: 'Inter';
 
-@include newFont('Onest', 'Onest-ExtraBold', 800);
-@include newFont('Onest', 'Onest-Bold', 700);
-@include newFont('Onest', 'Onest-Regular', 400);
+@include newFont('Inter', 'Inter-Bold', 600);
+@include newFont('Inter', 'Inter-Regular', 400);
 

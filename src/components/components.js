@@ -1,1 +1,2 @@
-// use import "./[ComponentName]/[ComponentName].js"
+import "./Slider/Slider.js"
+import "./Form/Form.js"

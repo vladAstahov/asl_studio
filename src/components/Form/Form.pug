@@ -1,0 +1,53 @@
+include ../Input/Input
+include ../Button/Button
+include ../ImageSvg/ImageSvg
+include ../TheText/TheText
+
+mixin Form()
+    .order-form.is-default&attributes(attributes)
+        +ImageSvg(
+            './images/icons/loader',
+            'loader'
+        ).__loader
+        .__response
+            +ImageSvg(
+                './images/icons/checked',
+                'success-icon'
+            )
+            +TheText(
+                'p1',
+                'surface',
+                'bold',
+                'p'
+            ) Данные успешно отправлены
+            +TheText(
+                'p2',
+                'secondary',
+            ) Мы свяжемся с вами в ближайшее время
+        form(
+            id="form-order"
+        ).__form
+            +Input(
+                name="name"
+                placeholder="Ваше имя"
+                required=true
+            )
+            +Input(
+                name="phone"
+                placeholder="Ваш номер телефона"
+                required=true
+                type="tel"
+            )
+            +Input(
+                name="email"
+                placeholder="Ваш E-mail"
+                required=true
+                type="email"
+            )
+            +Input(
+                name="telegram"
+                placeholder="Ник в telegram"
+            )
+            +Button(
+                type="submit"
+            ) Записаться на консультацию

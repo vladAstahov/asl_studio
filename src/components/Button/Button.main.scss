@@ -1,0 +1,10 @@
+.button {
+    @include media-hover-device() {
+        transition: 0.3s ease;
+        transition-property: background-color;
+
+        &:hover {
+            background-color: $secondary;
+        }
+    }
+}

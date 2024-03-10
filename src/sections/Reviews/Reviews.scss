@@ -1,0 +1,15 @@
+.reviews {
+    scroll-snap-align: start;
+    margin-top: toRem(40);
+    margin-bottom: toRem(40);
+
+    @include media-tabletLate() {
+        margin-top: toRem(45);
+        margin-bottom: toRem(50);
+    }
+
+    @include media-desktop() {
+        margin-top: toRem(50);
+        margin-bottom: toRem(84);
+    }
+}

@@ -1,0 +1,75 @@
+.ideas {
+    margin-bottom: toRem(40);
+    scroll-snap-align: start;
+
+    &__title {
+        text-align: center;
+
+        span {
+            display: inline-block;
+            background-color: $brand;
+            border-radius: toRem(10);
+            margin-top: toRem(10);
+            padding-left: toRem(10);
+            padding-right: toRem(10);
+        }
+    }
+
+    &__wrapper {
+        margin-top: toRem(30);
+    }
+
+    @include media-maxMobileLate() {
+        &__card {
+            & + & {
+                margin-top: toRem(18);
+            }
+        }
+    }
+
+
+    @include media-tabletLate() {
+        margin-bottom: toRem(50);
+
+        &__wrapper {
+            margin-top: toRem(40);
+        }
+
+        @include media-maxTablet() {
+            &__card {
+                & + & {
+                    margin-top: toRem(20);
+                }
+            }
+        }
+    }
+
+    @include media-desktop() {
+        margin-bottom: toRem(86);
+
+        &__title {
+            text-align: left;
+
+            span {
+                margin-left: toRem(8);
+            }
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: toRem(-32);
+            margin-bottom: toRem(-32);
+        }
+
+        &__card {
+            width: calc(50% - #{toRem(32)});
+            margin-right: toRem(32);
+            margin-bottom: toRem(32);
+        }
+
+        .is-mobile {
+            display: none;
+        }
+    }
+}

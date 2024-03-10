@@ -1,0 +1,38 @@
+include ../../components/TheText/TheText
+include ../../components/TechnologiesCard/TechnologiesCard
+
+mixin Technologies()
+    section(
+        id="technologies"
+    ).technologies
+        .__container.container
+            +TheText(
+                'h1',
+                'surface',
+                'bold',
+                'h2'
+            ).__title Технологии разработки
+            .__wrapper.-text
+                +TheText(
+                    'p1',
+                    'secondary',
+                ) Стэк технологий выбирается индивидуально под ключевую задачу каждого проекта
+                +TheText(
+                    'p1',
+                    'secondary',
+                ) Все проекты разрабатываются таким образом, чтобы их без труда можно было масштабировать.
+            .__wrapper.-sections
+                +TechnologiesCard(
+                    'Front-end',
+                    [
+                        ['react', 'react'],
+                        ['react', 'react'],
+                    ]
+                )
+                +TechnologiesCard(
+                    'Front-end',
+                    [
+                        ['django'],
+                        ['react', 'react'],
+                    ]
+                )

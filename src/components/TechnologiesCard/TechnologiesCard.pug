@@ -1,0 +1,19 @@
+include ../TheText/TheText
+include ../ImageSvg/ImageSvg
+
+mixin TechnologiesCard(title, imagesRows)
+    div.technologies-card
+        +TheText(
+            'h2',
+            'surface',
+            'bold',
+            'h3',
+        ).__title= title
+        .__images
+            each row in imagesRows
+                div.__row
+                    each image in row
+                        +ImageSvg(
+                            `./images/technologies/${image}`,
+                            'technology-image'
+                        ).__image

@@ -1,0 +1,70 @@
+.technologies-card {
+    &__title {
+        margin-bottom: toRem(12);
+    }
+
+    &__row {
+        display: flex;
+    }
+
+    &__image {
+        height: toRem(60);
+        width: auto;
+
+        & + & {
+            margin-left: toRem(10);
+        }
+    }
+
+    @include media-maxMobileLate() {
+        &__row {
+            &:nth-child(2) {
+                margin-top: toRem(10);
+            }
+        }
+    }
+
+    @include media-tabletLate() {
+        &__title {
+            margin-bottom: toRem(20);
+        }
+
+        &__image {
+            height: toRem(100);
+
+            & + & {
+                margin-left: toRem(20);
+            }
+        }
+
+        @include media-maxTablet() {
+            &__images {
+                display: flex;
+            }
+
+            &__row {
+                & + & {
+                    margin-left: toRem(20);
+                }
+            }
+        }
+    }
+
+    @include media-desktop() {
+        &__title {
+            margin-bottom: toRem(18);
+        }
+
+        &__row {
+            & + & {
+                margin-top: toRem(27);
+            }
+        }
+
+        &__image {
+            & + & {
+                margin-left: toRem(40);
+            }
+        }
+    }
+}

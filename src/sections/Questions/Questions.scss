@@ -1,0 +1,31 @@
+.questions {
+    scroll-snap-align: start;
+    margin-top: toRem(40);
+    margin-bottom: toRem(40);
+
+    &__title {
+        text-align: center;
+        margin-bottom: toRem(30);
+    }
+
+    &__item {
+        & + & {
+            margin-top: toRem(18);
+        }
+    }
+
+    @include media-tabletLate() {
+        margin-top: toRem(50);
+        margin-bottom: toRem(50);
+
+        &__title {
+            text-align: left;
+            margin-bottom: toRem(40);
+        }
+    }
+
+    @include media-desktop() {
+        margin-top: toRem(50);
+        margin-bottom: toRem(85);
+    }
+}

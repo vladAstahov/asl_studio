@@ -1,0 +1,10 @@
+mixin TheText(size, view, weight, tag)
+    #{tag || 'p'}(
+        class=`${[
+            'the-text',
+            `the-text--view-${view || 'surface'}`,
+            `the-text--size-${size || 'p1'}`,
+            `the-text--weight-${weight || 'regular'}`
+        ].join(' ')}`
+    )&attributes(attributes)
+        block

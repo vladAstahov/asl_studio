@@ -1,0 +1,111 @@
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.order-form {
+    $b: &;
+
+    position: relative;
+
+    &.is-default {
+        #{$b}__form {
+            opacity: 1;
+        }
+
+        #{$b}__loader,
+        #{$b}__response {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &.is-loading {
+        #{$b}__loader {
+            opacity: 1;
+        }
+
+        #{$b}__form,
+        #{$b}__response {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &.is-sent {
+        #{$b}__reponse {
+            opacity: 1;
+        }
+
+        #{$b}__form,
+        #{$b}__loader {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &__form,
+    &__loader,
+    &__response {
+        transition: 0.3s ease-in-out;
+        transition-property: opacity;
+    }
+
+    &__loader,
+    &__response {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__response {
+        flex-direction: column;
+    }
+
+    .input + .input {
+        margin-top: toRem(8);
+    }
+
+    .button {
+        width: 100%;
+        margin-top: toRem(12);
+    }
+
+    &__loader {
+        @include center();
+        width: toRem(50);
+        height: toRem(50);
+        animation: rotate360 1s infinite linear;
+    }
+
+    &__response {
+        img {
+            width: toRem(80);
+            object-fit: toRem(80);
+            margin-bottom: toRem(20);
+        }
+
+        p + p {
+            margin-top: toRem(12);
+            text-align: center;
+        }
+    }
+
+    @include media-tabletLate() {
+        .input + .input {
+            margin-top: toRem(10);
+        }
+
+        .button {
+            margin-top: toRem(20);
+        }
+    }
+}

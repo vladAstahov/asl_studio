@@ -1,0 +1,56 @@
+.order {
+    scroll-snap-align: start;
+    margin-top: toRem(40);
+    margin-bottom: toRem(40);
+
+    &__title {
+        margin-bottom: toRem(30);
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+    }
+
+    &__form {
+        margin-top: toRem(12);
+    }
+
+    @include media-tabletLate() {
+        margin-top: toRem(50);
+        margin-bottom: toRem(100);
+
+        &__title {
+            margin-bottom: toRem(40);
+        }
+
+        &__form {
+            margin-top: toRem(40);
+        }
+    }
+
+    @include media-desktop() {
+        &__container {
+            display: flex;
+        }
+
+        &__title,
+        &__description {
+            text-align: left;
+        }
+
+        &__title {
+            margin-bottom: toRem(43);
+        }
+
+        &__info {
+            width: calc(100% - #{toRem(545)});
+        }
+
+        &__form {
+            width: toRem(450);
+            margin-top: toRem(0);
+            margin-left: toRem(95);
+        }
+    }
+}

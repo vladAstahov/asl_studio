@@ -1,0 +1,40 @@
+.the-text {
+    &--view {
+        &-surface {
+            color: $surface;
+        }
+
+        &-secondary {
+            color: $surface;
+            opacity: .7;
+        }
+    }
+
+    &--size {
+        &-h1 {
+            @include fontSize(h1);
+        }
+
+        &-h2 {
+            @include fontSize(h2);
+        }
+
+        &-p1 {
+            @include fontSize(p1);
+        }
+
+        &-p2 {
+            @include fontSize(p2);
+        }
+    }
+
+    &--weight {
+        &-regular {
+            font-weight: 400;
+        }
+
+        &-bold {
+            font-weight: 600;
+        }
+    }
+}

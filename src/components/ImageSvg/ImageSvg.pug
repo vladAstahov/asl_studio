@@ -1,0 +1,8 @@
+mixin ImageSvg(imagePath, alt)
+    img(
+        src=`${imagePath}.svg`
+        alt=alt
+        loading="lazy"
+        width='100px'
+        height='100px'
+    ).image&attributes(attributes)

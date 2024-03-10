@@ -1,0 +1,52 @@
+include ../TheText/TheText
+include ../ButtonIcon/ButtonIcon
+include ../ReviewCard/ReviewCard
+
+mixin Slider(title, data)
+    .slider
+        .__header.container
+            +ButtonIcon(
+                'arrow-left'
+            )(
+                id="button-prev"
+            ).is-tablet
+            +TheText(
+                'h1',
+                'surface',
+                'bold',
+                'h1'
+            ).__title= title
+            +ButtonIcon(
+                'arrow-rght'
+            )(
+                id="button-next"
+            ).is-tablet
+            .__buttons.is-desktop
+                +ButtonIcon(
+                    'arrow-left'
+                )(
+                    id="button-prev"
+                )
+                +ButtonIcon(
+                    'arrow-rght'
+                )(
+                    id="button-next"
+                )
+        .__wrapper(
+            id="slider"
+        )
+            for review in data
+                +ReviewCard(
+                    review.name,
+                    review.post,
+                    review.text,
+                    review.avatar,
+                )(
+                    id=`review-${review.id}`
+                ).__item
+        .__dots
+            for review in data
+                button(
+                    id=review.id
+                    class=`slider__dot ${review.id === 0 && 'is-active'}`
+                )

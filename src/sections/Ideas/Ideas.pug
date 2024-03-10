@@ -1,0 +1,39 @@
+include ../../components/TheText/TheText
+include ../../components/Section/Section
+include ../../components/IdeaCard/IdeaCard
+
+mixin Ideas()
+    +Section(
+        id="ideas"
+    ).ideas
+        .__container.container
+            +TheText(
+                'h1',
+                'surface',
+                'bold',
+                'h2'
+            ).__title
+                | Реализуем ваши
+                br.is-mobile
+                span идеи
+            .__wrapper
+                +IdeaCard(
+                    'Landing-page',
+                    'Одностраничный сайт для продвижения продукта или компании',
+                    'rate'
+                ).__card
+                +IdeaCard(
+                    'Landing-page',
+                    'Одностраничный сайт для продвижения продукта или компании',
+                    'rate'
+                ).__card
+                +IdeaCard(
+                    'Landing-page',
+                    'Одностраничный сайт для продвижения продукта или компании',
+                    'rate'
+                ).__card
+                +IdeaCard(
+                    'Landing-page',
+                    'Одностраничный сайт для продвижения продукта или компании',
+                    'rate'
+                ).__card

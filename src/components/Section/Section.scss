@@ -1,0 +1,7 @@
+.section {
+    margin-top: toRem(40);
+
+    @include media-tabletLate() {
+        margin-top: toRem(50);
+    }
+}

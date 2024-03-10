@@ -1,0 +1,21 @@
+include ../TheText/TheText
+include ../ImageSvg/ImageSvg
+
+mixin IdeaCard(title, description, image)
+    article.idea-card&attributes(attributes)
+        .__content
+            .__main
+                +TheText(
+                    'h2',
+                    'surface',
+                    'bold',
+                    'h3'
+                ).__title= title
+                +TheText(
+                    'p1',
+                    'secondary',
+                ).__description= description
+            +ImageSvg(
+                `./images/ideas/${image}`,
+                'idea-decoration',
+            ).__image

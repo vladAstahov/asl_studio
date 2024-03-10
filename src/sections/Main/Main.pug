@@ -1,0 +1,35 @@
+include ../../components/Image/Image
+include ../../components/Button/Button
+include ../../components/TheText/TheText
+
+mixin Main()
+    section(
+        id="main"
+    ).main
+        .__container.container
+            .__image.scroll-animated-bottom
+                +Image(
+                    './images/main/phone',
+                    'decoration',
+                    'png'
+                ).__image-main
+            .__content.scroll-animated-bottom
+                +TheText(
+                    'h1',
+                    'surface',
+                    'bold',
+                    'h1'
+                ).__title
+                    | Выпускаем ваш
+                    br
+                    | бизнес в интернет
+                +TheText(
+                    'p1',
+                    'secondary',
+                ).__description Создавайте или масштабируйте бизнес в интернете
+                +Button(
+                    'a'
+                )(
+                    href="#order"
+                ).__button Записаться на консультацию
+            .__decoration.scroll-animated-bottom

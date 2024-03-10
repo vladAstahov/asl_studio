@@ -1,0 +1,24 @@
+include ../../components/TheText/TheText
+include ../../components/Button/Button
+include ../../components/Form/Form
+
+mixin Order()
+    section(
+        id="order"
+    ).order
+        .__container.container
+            .__info
+                +TheText(
+                    'h1',
+                    'surface',
+                    'bold',
+                    'h2'
+                ).__title
+                    | Оставьте заявку
+                    br
+                    | на консультацию
+                +TheText(
+                    'p2',
+                    'secondary',
+                ).__description Мы свяжемся с вами в ближайшее время для обсуждения деталей проекта
+            +Form().__form

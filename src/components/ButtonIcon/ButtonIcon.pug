@@ -1,0 +1,8 @@
+include ../ImageSvg/ImageSvg
+
+mixin ButtonIcon(icon)
+    button.button-icon&attributes(attributes)
+        +ImageSvg(
+            `./images/icons/${icon}`,
+            'icon'
+        ).__icon

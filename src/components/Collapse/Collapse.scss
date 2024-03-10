@@ -1,0 +1,57 @@
+.collapse {
+    $b: &;
+
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: toRem(18);
+    }
+
+    &__icon {
+        transition: 0.3s ease;
+        transition-property: transform;
+
+        width: toRem(20);
+        height: toRem(20);
+    }
+
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: toRem(30);
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ #{$b}__content {
+            max-height: toRem(300);
+            opacity: 1;
+            padding-bottom: toRem(18);
+        }
+
+        &:checked ~ #{$b}__header #{$b}__icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__content {
+        transition: 0.3s ease;
+        transition-property: max-height, opacity, padding-bottom;
+
+        box-sizing: border-box;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    @include media-desktop() {
+        &__icon {
+            width: toRem(30);
+            height: toRem(30);
+        }
+    }
+}

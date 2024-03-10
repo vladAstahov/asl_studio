@@ -1,5 +1,19 @@
 extends layout.pug
 
+include ./sections/Main/Main
+include ./sections/Ideas/Ideas
+include ./sections/Technologies/Technologies
+include ./sections/Reviews/Reviews
+include ./sections/Questions/Questions
+include ./sections/Order/Order
+include ./components/Footer/Footer
+
 block content
   main
-    p main
+    +Main
+    +Ideas
+    +Technologies
+    +Reviews
+    +Questions
+    +Order
+    +Footer

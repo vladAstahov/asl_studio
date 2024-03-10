@@ -1,0 +1,68 @@
+.review-card {
+    box-sizing: border-box;
+    border: 3px solid $secondary;
+    border-radius: toRem(10);
+    padding: toRem(15);
+    background-color: $dark;
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__avatar {
+        background: linear-gradient(45deg, rgb(121, 124, 124), rgb(23, 157, 165));
+        border-radius: 50%;
+        box-sizing: border-box;
+        width: toRem(80);
+        aspect-ratio: 1;
+        padding: toRem(3);
+    }
+
+    &__inner {
+        position: relative;
+        background: $dark;
+        border-radius: 50%;
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+    }
+
+    &__image {
+        @include center();
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__info {
+        margin-left: toRem(10);
+
+        & > * {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: toRem(5);
+    }
+
+    &__review {
+        margin-top: toRem(10);
+    }
+
+    @include media-tabletLate() {
+        padding: toRem(25);
+
+        &__info {
+            margin-left: toRem(29);
+        }
+
+        &__title {
+            margin-bottom: 0;
+        }
+
+        &__review {
+            margin-top: toRem(20);
+        }
+    }
+}

@@ -59,6 +59,7 @@
         "imagemin-mozjpeg": "^10.0.0",
         "imagemin-pngquant": "^9.0.2",
         "ncp": "^2.0.0",
+        "node-telegram-bot-api": "^0.65.1",
         "sass": "^1.69.5",
         "sharp": "^0.31.3",
         "svgo": "^3.1.0"

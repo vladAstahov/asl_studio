@@ -1,0 +1,134 @@
+.main {
+    height: 100vh;
+    overflow: hidden;
+    scroll-snap-align: start;
+
+    &__container {
+        display: flex;
+
+        position: relative;
+        overflow: hidden;
+
+        margin-top: 10.56vh;
+        height: calc(100vh - 10.56vh);
+    }
+
+    &__title {
+        margin-bottom: toRem(15);
+    }
+
+    &__description {
+        margin-bottom: toRem(20);
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__image {
+        width: 65.14vw;
+        margin-top: 9.33vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__decoration {
+        position: absolute;
+        z-index: 2;
+
+        bottom: toRem(-52);
+        width: toRem(495);
+        height: toRem(100);
+
+        background-color: $dark;
+        border-radius: 770.159px;
+        filter: blur(10.654417037963867px);
+    }
+
+    @include media-tabletLate() {
+        &__container {
+            margin-top: toRem(112);
+        }
+
+        &__title {
+            margin-bottom: toRem(18);
+        }
+
+        &__description {
+            margin-bottom: toRem(30);
+        }
+
+        &__button {
+            width: auto;
+        }
+
+        &__image {
+            width: 47.78vw;
+            margin-top: 10.35vh;
+        }
+
+        @include media-maxTablet() {
+            &__description {
+                width: toRem(404);
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &__button {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    @include media-maxTablet() {
+        &__container {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+
+        &__decoration {
+            @include center(horizontal);
+        }
+
+        &__title,
+        &__description {
+            text-align: center;
+        }
+    }
+
+    @include media-desktop() {
+        max-height: toRem(675);
+
+        &__container {
+            margin-top: toRem(102);
+            max-height: calc(#{toRem(675)} - #{toRem(90)});
+        }
+
+        &__content {
+            margin-left: toRem(90);
+            margin-top: toRem(112);
+        }
+
+        &__image {
+            width: toRem(367);
+            margin-top: 0;
+        }
+
+        &__title,
+        &__description {
+            margin-bottom: toRem(32);
+        }
+
+        &__decoration {
+            width: toRem(692);
+            height: toRem(169);
+            left: toRem(-81);
+            bottom: toRem(-57);
+
+            transform: rotate(-1.2deg);
+            filter: blur(28.654417037963867px);
+        }
+    }
+}

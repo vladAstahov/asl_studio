@@ -1,0 +1,45 @@
+include ../ImageSvg/ImageSvg
+include ../TheText/TheText
+
+mixin Footer()
+    footer.footer
+        .__container.container
+            +ImageSvg(
+                './images/footer/logo_transparent',
+                'logo'
+            ).__logo
+            .__rows
+                .__row
+                    +TheText(
+                        'p1',
+                        'secondary',
+                        'regular',
+                        'a'
+                    )(
+                        href="#ideas"
+                    ) Продукты
+                    +TheText(
+                        'p1',
+                        'secondary',
+                        'regular',
+                        'a'
+                    )(
+                        href="#technologies"
+                    ) Технологии
+                .__row
+                    +TheText(
+                        'p1',
+                        'secondary',
+                        'regular',
+                        'a'
+                    )(
+                        href="#reviews"
+                    ) Отзывы
+                    +TheText(
+                        'p1',
+                        'secondary',
+                        'regular',
+                        'a'
+                    )(
+                        href="#questions"
+                    ) Частые вопросы

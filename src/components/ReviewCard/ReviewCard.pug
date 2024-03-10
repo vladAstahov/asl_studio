@@ -1,0 +1,29 @@
+include ../Image/Image
+include ../TheText/TheText
+
+mixin ReviewCard(name, post, review, avatar)
+    article.review-card&attributes(attributes)
+        .__header
+            .__avatar
+                .__inner
+                    if avatar
+                        +Image(
+                            `./reviews/avatars/${avatar.split('.')[0]}`,
+                            'reviewer avatar',
+                            `${avatar.split('.')[1]}`
+                        ).__image
+            .__info
+                +TheText(
+                    'p1',
+                    'surface',
+                    'bold',
+                    'h3'
+                ).__title= name
+                +TheText(
+                    'p2',
+                    'secondary',
+                )= post
+        +TheText(
+            'p1',
+            'secondary'
+        ).__review= review

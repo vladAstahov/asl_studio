@@ -1,0 +1,24 @@
+include ../TheText/TheText
+include ../ImageSvg/ImageSvg
+
+mixin Collapse(title, text)
+    .collapse&attributes(attributes)
+        input(
+            type="checkbox"
+        )
+        .__header
+            +TheText(
+                'p1',
+                'surface',
+                'bold',
+                'h3',
+            )= title
+            +ImageSvg(
+                './images/icons/arrow-bottom',
+                'arrow bottom'
+            ).__icon
+        .__content
+            +TheText(
+                'p1',
+                'secondary',
+            )= text

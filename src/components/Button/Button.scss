@@ -1,0 +1,22 @@
+.button {
+    @include fontSize(p2, (weight: 600));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: toRem(9) toRem(15);
+    height: toRem(50);
+    border-radius: toRem(10);
+    color: $surface;
+    background-color: $brand;
+
+    @include media-tabletLate() {
+        padding: toRem(14) toRem(30);
+        height: toRem(60);
+    }
+
+    @include media-desktop() {
+        padding: toRem(18) toRem(30);
+    }
+}

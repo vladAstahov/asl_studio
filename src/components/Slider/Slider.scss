@@ -1,0 +1,130 @@
+.slider {
+    overflow: hidden;
+
+    .is-tablet {
+        display: none;
+    }
+
+    .is-desktop {
+        display: none;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: toRem(40);
+        margin-bottom: toRem(15);
+
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__dot {
+        transition: 0.3s ease;
+        transition-property: background-color;
+
+        width: toRem(10);
+        height: toRem(10);
+        border-radius: 50%;
+        background-color: $secondary;
+
+        & + & {
+            margin-left: toRem(10);
+        }
+
+        &.is-active {
+            background-color: $brand;
+        }
+    }
+
+    @include media-maxMobileLate() {
+        &__item {
+            min-width: calc(100vw - 12.5%);
+            margin-left: 6.25%;
+            margin-right: 6.25%;
+        }
+    }
+
+    @include media-maxTablet() {
+        &__wrapper {
+            scroll-snap-type: x mandatory;
+        }
+
+        &__item {
+            scroll-snap-align: center;
+        }
+    }
+
+    @include media-tabletLate() {
+        @include media-maxTablet() {
+            .is-tablet {
+                display: flex;
+            }
+        }
+
+        &__item {
+            min-width: toRem(500);
+        }
+
+        &__wrapper {
+            margin-bottom: toRem(30);
+        }
+
+        &__wrapper {
+            padding-right: 5.58%;
+            padding-left: 5.58%;
+        }
+
+        &__item {
+            & + & {
+                margin-left: toRem(20);
+            }
+        }
+    }
+
+    @include media-desktop() {
+        .is-desktop {
+            display: flex;
+        }
+
+        &__title {
+            text-align: left;
+        }
+
+        &__wrapper {
+            margin-top: toRem(45);
+            box-sizing: border-box;
+            padding-left: calc((100vw - #{toRem(1200)} + 11%) / 2);
+            padding-right: calc((100vw - #{toRem(1200)} + 11%) / 2);
+        }
+
+        &__buttons {
+            .button-icon + .button-icon {
+                margin-left: toRem(20);
+            }
+        }
+
+        &__wrapper {
+            pointer-events: none;
+        }
+    }
+}

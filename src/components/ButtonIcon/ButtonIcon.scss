@@ -1,0 +1,15 @@
+.button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary;
+    border-radius: 50%;
+
+    width: toRem(60);
+    height: toRem(60);
+
+    &__icon {
+        width: toRem(20);
+        height: toRem(20);
+    }
+}

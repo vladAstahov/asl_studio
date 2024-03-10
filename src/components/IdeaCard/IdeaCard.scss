@@ -1,0 +1,60 @@
+.idea-card {
+    box-sizing: border-box;
+
+    padding: toRem(3);
+    border-radius: toRem(10);
+    background: linear-gradient(45deg, rgb(121, 124, 124), rgb(23, 157, 165));
+
+    &__content {
+        padding-left: toRem(20);
+        padding-right: toRem(20);
+        padding-top: toRem(20);
+        border-radius: toRem(10);
+        background: $dark;
+    }
+
+    &__title {
+        margin-bottom: toRem(10);
+    }
+
+    &__description {
+        margin-bottom: toRem(12);
+    }
+
+    &__image {
+        width: toRem(160);
+        height: toRem(160);
+        padding-bottom: toRem(10);
+        margin-left: auto;
+    }
+
+    @include media-maxMobileLate() {
+        &__image {
+            margin-right: toRem(-20);
+        }
+    }
+
+    @include media-tabletLate() {
+        &__content {
+            display: flex;
+            padding-right: 0;
+        }
+
+        &__image {
+            padding-bottom: 0;
+            margin-left: toRem(36);
+        }
+
+        &__description {
+            margin-bottom: 0;
+            padding-bottom: toRem(20);
+        }
+    }
+
+    @include media-desktop() {
+        &__image {
+            margin-left: toRem(27);
+            margin-bottom: toRem(-20);
+        }
+    }
+}
